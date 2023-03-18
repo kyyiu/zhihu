@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import 'lib-flexible'
-
+import { Provider } from 'react-redux';
+import store from './store'
 // 处理最大宽度
 (function() {
   const handle = () => {
@@ -21,6 +22,8 @@ import 'lib-flexible'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
 );
 
